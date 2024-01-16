@@ -1,11 +1,11 @@
 import { useSelector,useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import {show,unshow,select} from '../redux/daganganSlice.jsx'
+import {show,select} from '../redux/daganganSlice.jsx'
+import DetailProduct from './DetailProduct.jsx';
+// import Cart from './Cart.jsx'
 
 
 const ProductCard = ({ product }) => {
-  const tampilkan = useSelector((state)=>state.dagang.show)
   const produkTerpilih = useSelector((state)=>state.dagang.selectedProduct)
   const dispatch = useDispatch()
 
@@ -16,9 +16,7 @@ const ProductCard = ({ product }) => {
     dispatch(show())
   }
 
-  const hideShow = () => {
-    dispatch(unshow())
-  }
+  
 
   return (
     <div className="card" style={{ width: "18rem" }}>
@@ -29,23 +27,10 @@ const ProductCard = ({ product }) => {
         <Button className="btn btn-primary" onClick={setShow} data-id={product.id}>Go somewhere</Button>
       </div>
 
-      <Modal
-        size="lg"
-        show={tampilkan}
-        onHide={() => hideShow()}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Detail Product
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h1>
-            {produkTerpilih.deskripsi}
-          </h1>
-        </Modal.Body>
-      </Modal>
+      <DetailProduct/>
+      {/* <Cart/> */}
+
+     
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import "../../css/allproducts.css"
 import ProductCard from "./ProductCard"
 import { useSelector } from "react-redux"
+import Nav from '../Nav'
 
 
 export default function AllProducts() {
@@ -10,6 +11,8 @@ export default function AllProducts() {
 
   return (
     <div>
+       <Nav/>
+      
       <div className="container">
 
         {products.map((product)=>(

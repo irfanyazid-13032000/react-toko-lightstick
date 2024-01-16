@@ -1,22 +1,22 @@
 // import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
-import {unshow} from '../redux/daganganSlice.jsx'
+import {tutupKeranjang} from '../redux/keranjangSlice.jsx'
 
-export default function DetailProduct() {
+export default function Cart() {
 
   const dispatch = useDispatch()
   
-  const tampilkan = useSelector((state)=>state.dagang.show)
-  const produkTerpilih = useSelector((state)=>state.dagang.selectedProduct)
+  const tampilkanKeranjang = useSelector((state)=>state.keranjang.showKeranjang)
+  // const produkTerpilih = useSelector((state)=>state.dagang.selectedProduct)
   const hideShow = () => {
-    dispatch(unshow())
+    dispatch(tutupKeranjang())
   }
   return (
     <div>
        <Modal
         size="lg"
-        show={tampilkan}
+        show={tampilkanKeranjang}
         onHide={() => hideShow()}
         aria-labelledby="example-modal-sizes-title-lg"
       >
@@ -27,7 +27,7 @@ export default function DetailProduct() {
         </Modal.Header>
         <Modal.Body>
           <h1>
-            {produkTerpilih.deskripsi}
+            haduh
           </h1>
         </Modal.Body>
       </Modal>

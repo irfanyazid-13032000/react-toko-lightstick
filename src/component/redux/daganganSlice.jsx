@@ -12,7 +12,7 @@ const initialState = {
     {id:4,nama:"lighstick Lesserafim",harga:381900,deskripsi:"le sserafim mantab",image:lesserafim},
   ],
   show:false,
-  selectedProduct:{}
+  selectedProduct:{},
 }
 
 export const daganganSlice = createSlice({
