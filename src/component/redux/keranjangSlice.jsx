@@ -44,10 +44,15 @@ export const keranjangSlice = createSlice({
     deleteProduct:(state,action) => {
       state.isiKeranjang = state.isiKeranjang.filter((isi)=>{return isi.id !== action.payload.id})
       state.totalSemuaHarga = state.isiKeranjang.reduce((acc,curVal)=>{return acc+curVal.totalHarga},0)
+    },
+    checkOut:(state)=>{
+      state.isiKeranjang = []
+      state.showKeranjang = false
+      state.totalSemuaHarga = 0
     }
 
   }
 })
 
-export const {tampilKeranjang,tutupKeranjang,masukKeranjang,tambahQty,kurangQty,deleteProduct} = keranjangSlice.actions
+export const {tampilKeranjang,tutupKeranjang,masukKeranjang,tambahQty,kurangQty,deleteProduct,checkOut} = keranjangSlice.actions
 export default keranjangSlice.reducer

@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
-import {tutupKeranjang,tambahQty,kurangQty,deleteProduct} from '../redux/keranjangSlice.jsx'
+import {tutupKeranjang,tambahQty,kurangQty,deleteProduct,checkOut} from '../redux/keranjangSlice.jsx'
 // import {useEffect} from 'react'
 
 
@@ -18,6 +18,15 @@ export default function Cart() {
   // let produkTerpilih = useSelector((state)=>state.dagang.selectedProduct)
   const hideShow = () => {
     dispatch(tutupKeranjang())
+  }
+
+  const handleConfirmation = () => {
+    const userConfirmed = window.confirm("Apakah Anda yakin?");
+
+    if (userConfirmed) {
+     dispatch(checkOut())
+    }
+
   }
 
 
@@ -75,6 +84,9 @@ export default function Cart() {
             </tr>
             </tbody>
           </table>
+
+          <button onClick={handleConfirmation} className="btn btn-info">Pesan</button>
+
         </Modal.Body>
       </Modal>
     </div>
