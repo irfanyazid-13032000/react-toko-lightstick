@@ -29,6 +29,7 @@ export default function DetailProduct() {
           <h1>
             {produkTerpilih.deskripsi}
           </h1>
+          <img src={produkTerpilih.image} style={{width:"600px"}}></img>
         </Modal.Body>
       </Modal>
     </div>

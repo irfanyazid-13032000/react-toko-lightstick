@@ -8,7 +8,6 @@ export default function Nav() {
   const dispatch = useDispatch()
 
   const lihatKeranjang = () => {
-    console.log("yadu");
     dispatch(tampilKeranjang())
   }
 
@@ -16,7 +15,7 @@ export default function Nav() {
     <div>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#">Boku No Hero Academia</a>
+        <a className="navbar-brand" href="#">Kpop Stands</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
